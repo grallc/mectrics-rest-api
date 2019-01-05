@@ -8,6 +8,15 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Connection - Model (struct)
+type Connection struct {
+	ID          string  `json:"id"`
+	ServerURL   string  `json:"server"`
+	InitialTime float64 `json:"initial"`
+	FinalTime   float64 `json:"final"`
+	Duration    float64 `json:"duration"`
+}
+
 // GetConnectionsEndpoint - GET all connections
 func GetConnectionsEndpoint(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-type", "application/json")
